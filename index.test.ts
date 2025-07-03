@@ -1,4 +1,4 @@
-import {messageToPrint} from './index'
+import { messageToPrint } from './index'
 
 test('fizzbuzz returns "Fizz" for 3', () => {
     expect(messageToPrint(3, [3, 5, 7, 11, 13, 17])).toBe('Fizz');

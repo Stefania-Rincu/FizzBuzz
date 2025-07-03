@@ -1,5 +1,4 @@
-//import prompt from "./user-prompt"
-import {createInterface} from "readline";
+import { createInterface } from "readline";
 
 // Function that constructs the output based on a list of messages and a boolean flag
 function constructOutput(messages: string[], revert: boolean): string {
@@ -56,24 +55,27 @@ function fizzbuzz(maxValue: number, rulesToUse: number[]): void {
     }
 }
 
-// let maxNumber = await prompt("Enter number: ");
-const rl = createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+function readInput() {
+    const rl = createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
 
-rl.question("Enter maximum number: ",
-    (answer: string) => {
-    try {
-        const maxNumber = parseInt(answer, 10);
-        rl.question("Introduce rules to be used using space between each number (options: 3 5 7 11 13 17): ", (rules: string) => {
-            const rulesList: number[] = rules.split(' ').map(rule => parseInt(rule.trim(), 10));
-            console.log(rulesList);
-            console.log(rulesList.includes(11));
-            fizzbuzz(maxNumber, rulesList);
-            rl.close()});
-    } catch (e) {
-        console.error("Introduce a number!");
-        rl.close();
-    }
-});
+    rl.question("Enter maximum number: ",
+        (answer: string) => {
+            try {
+                const maxNumber = parseInt(answer, 10);
+                rl.question("Introduce rules to be used using space between each number (options: 3 5 7 11 13 17): ", (rules: string) => {
+                    const rulesList: number[] = rules.split(' ').map(rule => parseInt(rule.trim(), 10));
+                    console.log(rulesList);
+                    console.log(rulesList.includes(11));
+                    fizzbuzz(maxNumber, rulesList);
+                    rl.close()});
+            } catch (e) {
+                console.error("Introduce a number!");
+                rl.close();
+            }
+        });
+}
+
+readInput();
