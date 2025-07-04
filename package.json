@@ -5,7 +5,7 @@
   "main": "index.js",
   "start": "ts-node index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config=jest.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,14 @@
   },
   "homepage": "https://github.com/Stefania-Rincu/FizzBuzz#readme",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.4",
+    "ts-jest": "^29.4.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@types/node": "^24.0.10",
+    "esrun": "^3.2.30",
     "ts-node": "^10.9.2"
   }
 }
